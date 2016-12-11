@@ -25,7 +25,7 @@ public class hw02 {
 				}
 			}
 		}
-		System.out.println(kill);
+		//System.out.println(kill);
 		if(kill==16){
 			System.out.println("³q±þ");
 		}else if(kill==10||kill==4){
