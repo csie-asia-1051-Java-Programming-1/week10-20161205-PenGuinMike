@@ -15,16 +15,39 @@ public class ex01 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scn = new Scanner(System.in);
-		int data[]=new int [10];
+		int data[][]=new int [3][10];
+		String str[]=new String[10];
 		for(int i=0;i<10;i++){
-			if()
-			data[i]=Integer.valueOf(scn.next());
-			
+			str[i]=scn.next();
+			if(str[i].equals("X")||str[i].equals("x")){
+				str[i]="10";
+				data[0][i]=Integer.valueOf(str[i]);
+			}else{
+				data[0][i]=Integer.valueOf(str[i]);
+			}
 		}
-		for(int i=0;i<10;i++){
+		/*for(int i=0;i<10;i++){
 			System.out.print(data[i]+" ");
-		}System.out.println();
-		
+		}System.out.println();*/
+		fun(data);
 	}
-
+	public static void fun(int data [][]){
+		for(int i=1;i<3;i++){
+			for(int j=0;j<10;j++){
+				for(int k=0;k<=j;k++){
+					data[i][j]+=data[i-1][k];
+				}
+			}
+		}
+		for(int i=0;i<3;i++){
+			for(int j=0;j<10;j++){
+				System.out.print(data[i][j]+" ");
+			}System.out.println();
+		}
+		if(data[2][9]%11==0){
+			System.out.println("合法");
+		}else{
+			System.out.println("不合法");
+		}
+	}
 }
